@@ -27,7 +27,7 @@ public class HtmlController {
             String title = htmlService.title(url);
             return JsonResult.success("解析成功", title);
         } catch (Exception e) {
-//            log.error("解析title异常", e);
+            log.error("解析title异常", e);
             return JsonResult.failure("解析title异常:" + e.getMessage());
         }
     }

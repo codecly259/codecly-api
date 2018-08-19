@@ -14,7 +14,7 @@ public class HtmlService {
     public String title(String url) throws IOException {
         Document doc = Jsoup.connect(url).get();
         String title = doc.title();
-//        log.info("解析出url:[{}]对应的title为:[{}]", url, title);
+        log.info("解析出url:[{}]对应的title为:[{}]", url, title);
         return title;
     }
 
