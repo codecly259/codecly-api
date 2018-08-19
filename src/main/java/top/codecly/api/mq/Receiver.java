@@ -4,6 +4,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.amqp.rabbit.annotation.RabbitHandler;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.stereotype.Component;
+import top.codecly.api.entity.UserEntity;
 
 /**
  * @ClassName Receiver
@@ -17,9 +18,8 @@ import org.springframework.stereotype.Component;
 public class Receiver {
 
     @RabbitHandler
-    public void process(String hello) {
-        log.info("Receiver: " + hello);
+    public void process(UserEntity user) {
+        log.info("Receiver: " + user);
     }
-
 
 }

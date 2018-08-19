@@ -4,8 +4,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.amqp.core.AmqpTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-
-import java.util.Date;
+import top.codecly.api.entity.UserEntity;
 
 /**
  * @ClassName Sender
@@ -21,9 +20,13 @@ public class Sender {
     private AmqpTemplate amqpTemplate;
 
     public void send() {
-        String context = "hello" + new Date();
-        log.info("Sender:" + context);
-        this.amqpTemplate.convertAndSend("hello", context);
+        UserEntity user = new UserEntity();
+        user.setUserId(1);
+        user.setAge(16);
+        user.setName("马新春");
+        user.setAddress("地球村");
+        log.info("Sender:" + user);
+        this.amqpTemplate.convertAndSend("hello", user);
     }
 
 }

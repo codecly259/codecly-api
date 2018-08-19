@@ -40,7 +40,7 @@ public class HtmlControllerTest {
 
     @Test
     public void titleTest() throws Exception {
-        String url = "https://www.cnblogs.com/shunyang/p/8681111.html";
+        String url = "https://www.cnblogs.com/lyy-2016/p/6122144.html";
         mockMvc.perform(MockMvcRequestBuilders.get("/html/title")
                     .contentType(MediaType.APPLICATION_FORM_URLENCODED_VALUE)
                     .param("url", url))
